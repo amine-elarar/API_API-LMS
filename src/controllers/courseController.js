@@ -9,12 +9,17 @@ const {get_allCourses ,get_couseById} = require('../repositories/courseRepositor
 // }
 
 
-async  function  get_courses(request,response)
+async function get_courses(request, response)
 {
-    const courses = await get_allCourses();
-    response.status(200).json(courses);
+    const category = request.query.category;
+    const level = request.query.level;
+    const keyword = request.query.keyword;
 
+    const courses = await get_allCourses(category, level, keyword);
+
+    response.status(200).json(courses);
 }
+
 async  function  get_coursE(request,response)
 {
     
