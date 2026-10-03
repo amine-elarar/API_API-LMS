@@ -8,7 +8,6 @@ const {get_allCourses ,get_couseById} = require('../repositories/courseRepositor
 //     response.status(200).json({success: true, message: "success"});
 // }
 
-
 async function get_courses(request, response)
 {
     const category = request.query.category;
