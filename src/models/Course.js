@@ -9,7 +9,8 @@ const course_schema = new mongoose.Schema(
     description: { type: String, required: true },
     category: { type: String, required: true, index: true },
     level: { type: mongoose.Schema.Types.ObjectId, ref: 'Level', required: true },
-    published: { type: Boolean, default: false }
+    published: { type: Boolean, default: false },
+    publishedAt: { type: Date }
     }, { timestamps: true });
 
 module.exports = mongoose.model('Course', course_schema);
