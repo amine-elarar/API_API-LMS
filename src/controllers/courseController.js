@@ -1,5 +1,4 @@
 
-const Course = require('../models/Course');
 const {get_allCourses ,get_couseById} = require('../repositories/courseRepository')
 // const {} = require('../repositories/courseRepository')
 
@@ -13,11 +12,18 @@ async function get_courses(request, response)
     const category = request.query.category;
     const level = request.query.level;
     const keyword = request.query.keyword;
+    const sort = request.query.sort;
 
-    const courses = await get_allCourses(category, level, keyword);
+    const courses = await get_allCourses(
+        category,
+        level,
+        keyword,
+        sort
+    );
 
     response.status(200).json(courses);
 }
+
 
 async  function  get_coursE(request,response)
 {
